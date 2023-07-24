@@ -1,4 +1,5 @@
 import logs from '../models/Log.js'
+import sendToQueue from '../queue/send.js'
 import api from '../services/api.js'
 
 class CarController {
@@ -15,9 +16,10 @@ class CarController {
       const { data } = await api.post('/cars', { ...req.body })
       const log = new logs({ car_id: data._id })
       await log.save()
+      await sendToQueue(data)
       return res.status(200).json(data)
     } catch (error) {
-      return res.status(400).json(error)
+      return res.status(400).json({ message: error.response.data.msg })
     }
   }
 }
