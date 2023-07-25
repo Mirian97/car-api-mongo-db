@@ -8,7 +8,9 @@ class CarController {
       const response = await api.get('/cars')
       return res.status(200).json(response.data)
     } catch (error) {
-      return res.status(500).json({ message: error.response.data.msg })
+      return res
+        .status(error.response.status)
+        .json({ message: error.response.data.msg })
     }
   }
   static createCar = async (req, res) => {
@@ -19,16 +21,14 @@ class CarController {
       await sendToQueue(data)
       return res.status(200).json(data)
     } catch (error) {
-      return res.status(400).json({ message: error.response.data.msg })
+      return res
+        .status(error.response.status)
+        .json({ message: error.response.data.msg })
     }
   }
-  static receiveWebHook = async (req, res) => {
-    try {
-      console.log('WebHook recebido com sucesso', req.body)
-      return res.status(200).end()
-    } catch (error) {
-      return res.status(500).json({ message: 'Erro interno do servidor' })
-    }
+  static receiveWebHook = (req, res) => {
+    console.log('WebHook recebido com sucesso', req.body)
+    return res.status(200).end()
   }
 }
 
