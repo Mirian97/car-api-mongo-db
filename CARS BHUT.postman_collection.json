@@ -1,0 +1,58 @@
+{
+  "info": {
+    "_postman_id": "f84ba99a-1f19-483a-939d-07be36631395",
+    "name": "CARS BHUT",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "28123917"
+  },
+  "item": [
+    {
+      "name": "LIST CARS",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{URL}}/listCars",
+          "host": ["{{URL}}"],
+          "path": ["listCars"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "LIST LOGS",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{URL}}/logs",
+          "host": ["{{URL}}"],
+          "path": ["logs"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CREATE CAR",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"CRUZE SPORT6 RS\",\r\n    \"brand\": \"Chevrolet\",\r\n    \"price\": \"170.100\",\r\n    \"age\": 2023\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{URL}}/createCar",
+          "host": ["{{URL}}"],
+          "path": ["createCar"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
