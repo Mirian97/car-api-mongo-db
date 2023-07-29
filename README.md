@@ -22,11 +22,11 @@ No terminal, execute o comando npm run dev e pronto! A Api estará funcionando n
 
 ## 🚀 Rotas da API
 
-### Listagem de carros
+### 📌 Listagem de carros
 
 **GET /listCars:** Rota de listagem de carros e que faz uma requisição GET neste endpoint: http://api-test.bhut.com.br:3000/api/cars
 
-### Cadastro carro
+### 📌 Cadastro carro
 
 **POST /createCar:** Rota para o cadastro de um carro e que faz requisição POST neste endpoint: http://api-test.bhut.com.br:3000/api/cars
 
@@ -42,15 +42,15 @@ Quando um novo carro é criado, este irá criar um novo registro na tabela de Lo
 - date_hour: hora e data do registro.
 - car_id: id do carro criado.
 
-### Recebimento de WebHook
+### 📌 Recebimento de WebHook
 
 **POST /webHookClient:** Rota para o recebimento de webHook. Assim que um carro for criado, suas informações serão enviadas a uma fila que quando consumida, enviará um webHook com as informações do carro e a mensagem de: Novo carro cadastrado.
 
-### Listagem de logs
+### 📌 Listagem de logs
 
 **GET /logs:** Rota para a listagem dos logs registrados.
 
-## 🛠️ Tecnologías utilizadas
+## 🛠️ Tecnologias utilizadas
 
 - Javascript
 - Node.js
